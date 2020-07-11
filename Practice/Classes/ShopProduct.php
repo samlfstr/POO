@@ -20,6 +20,9 @@ class ShopProduct
     }
 }
 
+/**
+ * Class ShopProductWriter
+ */
 class ShopProductWriter
 {
     function writeShopProduct(ShopProduct $product){
@@ -31,7 +34,6 @@ class ShopProductWriter
 $shop_product = new ShopProduct('Phone','150$','Apple'); // instance
 $product = new ShopProductWriter(); // sub-class
 $product->writeShopProduct($shop_product);
-
 
 
 
