@@ -1,6 +1,5 @@
 <?php
 
-
 class Vehicle
 {
     var $color;
