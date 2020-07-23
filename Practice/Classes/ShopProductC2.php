@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * In this class we are using parent:: key word
+ */
+
 class ShopProductC2
 {
     public $title;

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * In this class we use inheritance with ctors
+ */
 
 class ShopProductC1
 {
@@ -47,7 +50,7 @@ class ShopProductC1
 
 class CdProduct extends ShopProductC1
 {
-    public $play_time;
+    private $play_time;
 
     public function __construct($title, $producer_f_name, $producer_m_name, $price,
                                 $play_time)

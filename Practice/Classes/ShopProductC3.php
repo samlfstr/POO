@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * In this class we are using getter and setter methods like they are supposed be used.
+ */
 class ShopProductC3
 {
     private $price;
