@@ -70,6 +70,7 @@ echo 'Unicycle count: ' . Unicycle::$instance_count . '<br />';
 $bike = Bicycle::create();
 $uni = Unicycle::create();
 
+
 echo 'Bicycle count: ' . Bicycle::$instance_count . '<br />';
 echo 'Unicycle count: ' . Unicycle::$instance_count . '<br />';
 
