@@ -13,4 +13,4 @@ class ExerciceStaticFactory
 }
 
 $instance = ExerciceStaticFactory::create();
-echo ExerciceStaticFactory::$info;;
+echo ExerciceStaticFactory::$info;
