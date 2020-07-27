@@ -10,6 +10,7 @@ class MagiCtorNullCoalessing
     private $name;
     private $adress;
     private $date;
+    private const BR = "<br/>";
 
     /**
      * MagiCtorNullCoalessing constructor.
@@ -24,10 +25,16 @@ class MagiCtorNullCoalessing
 
     }
 
+    public function info() : string {
+        return 'Name :'. $this->name.self::BR.'Adress :'.$this->adress.self::BR.'Date :'.$this->date.self::BR;
+    }
 }
 
 $new_magic = new MagiCtorNullCoalessing([
-    'name'=>'Samuel',
+    // even if I let it empty that ctor works!!!
+    //'name'=>'Samuel',
     'adress'=>'Yenimahalle/Ankara',
     'date'=>'2020'
 ]);
+
+echo $new_magic->info();
