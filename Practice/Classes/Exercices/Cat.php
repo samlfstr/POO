@@ -37,7 +37,7 @@ class Sleep extends Cat{
        parent::__construct();
        $this->energy++;
        $this->hungary++;
-       $this->mood = "Up";
+       $this->mood = "Down";
    }
 
     public static function create()
@@ -47,14 +47,26 @@ class Sleep extends Cat{
 
 }
 class Play extends Cat{
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->energy--;
+        $this->hungary++;
+        $this->mood = "Up";
+    }
     public static function create()
     {
         return parent::create();
     }
 }
 class Feed extends Cat{
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->energy++;
+        $this->hungary--;
+        $this->mood = "Up";
+    }
     public static function create()
     {
         return parent::create();
