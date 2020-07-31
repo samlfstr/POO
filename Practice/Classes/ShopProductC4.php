@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
 What ShopProductWriter class does is to serve as a container to all product by holding the methods for it.
  */
 
@@ -36,7 +36,7 @@ abstract class ShopProductC4Writer{
     abstract public function write();
 }
 
-class XmlProductWriter extends ShopProductC4{
+class XmlProductWriter extends ShopProductC4Writer{
     public function write(){
         $str = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
         $str .= "<products>\n";
@@ -52,7 +52,7 @@ class XmlProductWriter extends ShopProductC4{
     }
 }
 
-class TextProductWriter extends ShopProductWriter{
+class TextProductWriter extends ShopProductC4Writer{
     public function write() {
         $str = "PRODUCTS:\n";
         foreach ( $this->products as $shopProduct ) {
@@ -61,3 +61,5 @@ class TextProductWriter extends ShopProductWriter{
         print $str;
     }
 }
+
+

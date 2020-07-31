@@ -1,6 +1,7 @@
 <?php
 
-/* Self key word refers always to the super (main / parent)
+/** Late static binding
+ * Self key word refers always to the super (main / parent)
  * class's variable (parameter).
  * The out put with self::$age inside the main function
  * Will alway be 2, The only way to make a change is to

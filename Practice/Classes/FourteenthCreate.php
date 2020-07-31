@@ -1,6 +1,6 @@
 <?php
 
-/* Some times we want to simplify the creation process of a class*/
+/** Some times we want to simplify the creation process of a class*/
 
 class FourteenthCreate
 {
