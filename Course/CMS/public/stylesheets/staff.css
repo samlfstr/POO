@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  height: 980px;
+  height: auto;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ navigation ul li {
 
 #content {
   width: 920px;
-  min-height: 500px;
+  min-height: 300px;
   padding: 0 30px;
 }
 

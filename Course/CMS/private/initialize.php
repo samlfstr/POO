@@ -6,6 +6,8 @@
 - __FILE__ returns the current path to this file
 - dirname() returns the path to the parent directory
 
+- $_SERVER['SCRIPT_NAME'] returns the absolute path
+
    Note : Every path is relative to the current file in where we are now.
 
 */
