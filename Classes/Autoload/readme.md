@@ -12,7 +12,7 @@ Autoload
    ->autoload.php
 
 ```
-The **obejctive** is to use classes without being have to include them in (any)index.php
+The **obejctive** is to use classes without having to include them in (any)index.php
  file.
  
 ```php
