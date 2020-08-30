@@ -1,6 +1,4 @@
 # Autoload
----
-
 **First** think that I did was to create 3 directories
 ```
 
