@@ -11,7 +11,7 @@
 </td>
 ```
 
-And to take the value from another script all you have to do is to :
+And to take the value from another script all you have to do is :
 
 ```php
 <?php 
@@ -19,3 +19,6 @@ And to take the value from another script all you have to do is to :
    $id = $_GET['id'];
 ?>
 ```
+
+But there is a `problem` when you do that and in the url there is no `?id` naturally it
+ returns an error. Because get recieves nothing.
