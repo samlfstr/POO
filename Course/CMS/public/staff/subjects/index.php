@@ -39,7 +39,7 @@ $subjects = [
 	 </tr>
 	 </thead>
 
-	 <!-- For Looop -->
+	 <!-- For Loop -->
      <?php foreach ($subjects as $subject) : ?>
 			<tr>
 			 <td><?php echo $subject['id']; ?></td>
@@ -53,7 +53,7 @@ $subjects = [
      <?php endforeach; ?>
 	 <!-- END OF For Looop -->
 
-	</table>
+	</table>X
 	<!-- END OF Table -->
 
  </div>

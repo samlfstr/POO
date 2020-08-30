@@ -12,7 +12,7 @@
 			 content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <link rel="stylesheet" media="all" href="<?php
- echo WWW_ROOT.'/stylesheets/staff.css';
+ echo url_for('stylesheets/staff.css');
  ?>">
  <title>GBI -<?php echo $page_title; ?></title>
 </head>
