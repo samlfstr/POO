@@ -7,7 +7,7 @@
    
 ```php
 <td>
-  <a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">View</a>
+  <a class="action" href="<?php echo url_for('staff\subjects\show.php?id=') . subject['id']; ?>">View</a>
 </td>
 ```
 
