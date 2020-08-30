@@ -1,5 +1,4 @@
 <?php require_once('../../../private/initialize.php'); ?>
-
 <?php
 
 /*
@@ -12,6 +11,16 @@ $subjects = [
   ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Small Business'],
   ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
 ];
+
+
+/*
+To facilitate the understanding of what you are doing
+you can use variables.
+*/
+
+$path = url_for('staff\subjects\show.php?id=');
+
+
 ?>
 
 <?php $page_title = 'Subjects'; ?>
@@ -46,9 +55,19 @@ $subjects = [
 			 <td><?php echo $subject['position']; ?></td>
 			 <td><?php echo $subject['visible'] == 1 ? 'true' : 'false'; ?></td>
 			 <td><?php echo $subject['menu_name']; ?></td>
-			 <td><a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">View</a></td>
-			 <td><a class="action" href="">Edit</a></td>
-			 <td><a class="action" href="">Delete</a></td>
+
+			 <td>
+				<a class="action" href=" <?php echo $path.
+					$subject['id']; ?>">View </a>
+			 </td>
+
+			 <td><a class="action"
+							href="<?php echo url_for('staff\subjects\show.php') ?>">Edit</a>
+			 </td>
+
+			 <td><a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">Delete</a>
+			 </td>
+
 			</tr>
      <?php endforeach; ?>
 	 <!-- END OF For Looop -->
@@ -57,7 +76,6 @@ $subjects = [
 	<!-- END OF Table -->
 
  </div>
-
 
 </div>
 <!--END OF Content area-->

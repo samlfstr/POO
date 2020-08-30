@@ -10,3 +10,12 @@
   <a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">View</a>
 </td>
 ```
+
+And to take the value from another script all you have to do is to :
+
+```php
+<?php 
+   // Get id from url
+   $id = $_GET['id'];
+?>
+```
