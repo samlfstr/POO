@@ -7,7 +7,7 @@
    
 ```html
 <td>
-  <a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">View</a>
+  <a class="action" href="<?php echo url_for('staff\subjects\show.php?id=') . subject['id']; ?>">View</a>
 </td>
 ```
 
@@ -23,7 +23,7 @@ And to take the value from another script all you have to do is :
 But there is a `problem` when you do that and in the url there is no `?id` naturally it
  returns an error. Because get recieves nothing.
  
- Solution using the coalessing operator :
+ Solution using the null coalessing operator :
  
 
  ```php
