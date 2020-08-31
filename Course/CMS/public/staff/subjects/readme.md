@@ -5,7 +5,7 @@
   queries. A `url query` is the part of the url after the question mark `_/page?*=_` * is
    the variable name and = after the equal sign is the value of that variable.
    
-```php
+```html
 <td>
   <a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">View</a>
 </td>
@@ -32,4 +32,48 @@ But there is a `problem` when you do that and in the url there is no `?id` natur
     $id = $_GET['id'] ?? '1';
  ?>
  ```
+
+# Url encode
+
+The common problem with it is that, some time it may happen that we need to pass some string to URL, what happens is that when we use characters below it may be interpreted by the browser as it was url parameter even it is not the case.
+
+To prevent that happening php gives us two builtin function
+
+`urlencode` and `rawurlencode` 
+
+after the `question mark ?` or in the url query part you use the first one, simple one urlencode :
+
+###### `note :` after the encode we dont need to decode cause it is done and saved in to $_GET super global variable automatically by php itself.
+
+```html
+<a href="show.php?name=.<?php echo urlencode('John Doe'); ?>">Handling Space</a>
+<br/>
+<a href="show.php?name=.<?php echo urlencode('John&Doe'); ?>">Handling & Sign</a>
+<br/>
+<a href="show.php?name=.<?php echo urlencode('!#34John **Doe'); ?>">Crazy Characters</a>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
