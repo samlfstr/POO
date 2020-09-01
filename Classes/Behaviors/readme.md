@@ -48,7 +48,6 @@ And the way we check if the method exists is by using`in_array` function :
 $product = getProduct();
 $method_name = 'getTitle';
 
-<<<<<<< HEAD
 if( in_array ($method_name, get_class_methods($product))){
   print $product->$method_name();
 }
@@ -64,9 +63,3 @@ if(is_callable(array($product, $method))){
 }
  ```
  
-=======
-if(in_array($method_name, get_class_methods($product))){
-  print $product->$method_name();
-}
-```
->>>>>>> 552fc954ec1a9f3aca71cb80beffd694f85dfc2e
