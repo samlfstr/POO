@@ -2,13 +2,13 @@
 
 
 /*
-   With this approach we are passing values to the constactor using an array.
+   With this approach we are passing values to the constructor using an array.
 */
 
-class MagiCtorNullCoalessing
+class MagiCtorNullCoalescing
 {
     private $name;
-    private $adress;
+    private $address;
     private $date;
     private const BR = "<br/>";
 
@@ -20,20 +20,20 @@ class MagiCtorNullCoalessing
     {
         // arr is not null or defined then arr!!!
         $this->name = $arr['name'] ?? null;
-        $this->adress = $arr['adress'] ?? null;
+        $this->address = $arr['address'] ?? null;
         $this->date = $arr['date'] ?? null;
 
     }
 
     public function info() : string {
-        return 'Name :'. $this->name.self::BR.'Adress :'.$this->adress.self::BR.'Date :'.$this->date.self::BR;
+        return 'Name :'. $this->name.self::BR.'Address :'.$this->address.self::BR.'Date :'.$this->date.self::BR;
     }
 }
 
-$new_magic = new MagiCtorNullCoalessing([
+$new_magic = new MagiCtorNullCoalescing([
     // even if I let it empty that ctor works!!!
     //'name'=>'Samuel',
-    'adress'=>'Yenimahalle/Ankara',
+    'address'=>'Yenimahalle/Ankara',
     'date'=>'2020'
 ]);
 
