@@ -54,6 +54,7 @@ if( in_array ($method_name, get_class_methods($product))){
 ```
 
 **The Method Exist But Not Callable !**
+
 Well in that case, we can check at the same time if a method exists and callable (`it's
  not private or public`) 
  
