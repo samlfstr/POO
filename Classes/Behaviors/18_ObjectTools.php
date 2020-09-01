@@ -105,17 +105,25 @@ class BookProductClass extends ShopProductClass
 
  $shop_product = new BookProductClass('Ball','Samuel', 'Foster',50,139);
 
+// get_class
+
 /*if (get_class($shop_product) == 'ShopProductClass'){
   echo $shop_product->getSummaryLine();
 }else{
   echo "This is not a ShopProduct";
 }*/
 
+// instanceof
+
+/*
 if($shop_product instanceof  BookProductClass){
   echo "It is instance of BookProduct";
 }
 else{
   echo "It is not instance of BookProduct";
-}
+}*/
 
+// Learning about methodes
+$class_methodes = get_class_methods('ShopProductClass');
 
+var_dump($class_methodes);

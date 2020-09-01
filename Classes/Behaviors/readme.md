@@ -29,3 +29,26 @@ else{
   echo "It is not instance of BookProduct";
 }
 ```
+
+# Learning about mehods
+
+We can acquire a list of all the methodes in a class using the `get_class_methods
+()` function. This requires a class name (`string`) and returns containing the names of
+ all the methods in the class.
+ 
+```php
+  0 => string '__construct' (length=11)
+  1 => string 'getProducer' (length=11)
+  2 => string 'getSummaryLine' (length=14)
+```
+
+And the way we check if the method exists is by using`in_array` function :
+
+```php
+$product = getProduct();
+$method_name = 'getTitle';
+
+if(`in_array`($method_name, `get_class_methods`($product))){
+  print $product->$method_name();
+}
+```
