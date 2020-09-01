@@ -48,7 +48,25 @@ And the way we check if the method exists is by using`in_array` function :
 $product = getProduct();
 $method_name = 'getTitle';
 
+<<<<<<< HEAD
+if( in_array ($method_name, get_class_methods($product))){
+  print $product->$method_name();
+}
+```
+
+**The Method Exist But Not Callable !**
+Well in that case, we can check at the same time if a method exists and callable (`it's
+ not private or public`) 
+ 
+ ```php
+if(is_callable(array($product, $method))){
+  print $product->$getTitle();
+}
+ ```
+ 
+=======
 if(in_array($method_name, get_class_methods($product))){
   print $product->$method_name();
 }
 ```
+>>>>>>> 552fc954ec1a9f3aca71cb80beffd694f85dfc2e
