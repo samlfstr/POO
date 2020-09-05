@@ -1,13 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport"
-			 content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>Globe Bank</title>
-</head>
-<body>
-<h1>Globe bank coming soon</h1>
-</body>
-</html>
+<?php require_once('../../../private/initialize.php'); ?>
+
+<?php include(SHARED_PATH . '/staff_header.php'); ?>
+
+<?php
+
+$pages = [
+ ['id' => 1, 'path' => "public/index.php"],
+ ['id' => 2, 'path' => "Staff/index.php"],
+ ['id' => 3, 'path' => "Staff/Pages/index.php"],
+ ['id' => 4, 'path' => "Staff/Subject/index.php"],
+ ['id' => 5, 'path' => "Staff/Subject/show.php"],
+];
+
+$path = url_for('staff/pages/show.php?id=');
+
+?>
+
+ <!--Content area-->
+ <div id="content">
+
+	<table class="table">
+	 <thead>
+	 <tr>
+		<th> Pages</th>
+		<th> Path</th>
+	 </tr>
+	 </thead>
+	 <tbody>
+   <?php foreach ($pages as $page) : ?>
+		<tr onclick="document.location.href='<?php echo $path.$page['id']; ?> '"
+				class="list-group-item-action">
+		 <td>
+       <?php echo $page['id']; ?>
+		 </td>
+		 <td>
+       <?php echo $page['path']; ?>
+		 </td>
+
+		</tr>
+
+   <?php endforeach; ?>
+	 </tbody>
+	</table>
+
+ </div>
+ <!--END OF Content area-->
+
+<?php include(SHARED_PATH . '/staff_footer.php'); ?>

@@ -1,3 +1,4 @@
+<?php require_once ('../../../private/shared/initialize.php')?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +9,6 @@
  <title>Globe Bank</title>
 </head>
 <body>
-<h1>Globe bank coming soon</h1>
+
 </body>
 </html>

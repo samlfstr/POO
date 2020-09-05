@@ -64,3 +64,4 @@ if(is_callable(array($product, $method))){
 }
  ```
  
+# Learning about properties
