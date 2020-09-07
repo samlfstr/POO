@@ -5,9 +5,9 @@ There are a number fo basic tools available to check the type of object. First o
  
 ```php
 //  Learning about an Object or Class
-
  $shop_product = new BookProductClass('Ball','Samuel', 'Foster',50,139);
 
+//  Note : We are getting the class from the instance.
 if (get_class($shop_product) == 'ShopProductClass'){
   echo $shop_product->getSummaryLine();
 }else{
@@ -33,7 +33,10 @@ else{
 # Learning about mehods
 
 We can acquire a list of all the methodes in a class using the `get_class_methods
-()` function. This requires a class name (`string`) and returns containing the names of
+()` function. This requires a class name (`string`)  or an instance of that class and
+ it returns
+ containing the
+ names of
  all the methods in the class.
  
 ```php
@@ -45,7 +48,7 @@ We can acquire a list of all the methodes in a class using the `get_class_method
 And the way we check if the method exists is by using`in_array` function :
 
 ```php
-$product = getProduct();
+$product = new Product();
 $method_name = 'getTitle';
 
 if( in_array ($method_name, get_class_methods($product))){

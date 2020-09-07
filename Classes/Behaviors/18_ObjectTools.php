@@ -124,6 +124,5 @@ else{
 }*/
 
 // Learning about methodes
-$class_methodes = get_class_methods('ShopProductClass');
-
+$class_methodes = get_class_methods($shop_product);
 var_dump($class_methodes);
