@@ -33,7 +33,7 @@ else{
 # Learning about mehods
 
 We can acquire a list of all the methodes in a class using the `get_class_methods
-()` function. This requires a class name (`string`)  or an instance of that class and
+()` function. This requires a class name (`string`)  or an `instance` of that class and
  it returns
  containing the
  names of
@@ -68,3 +68,14 @@ if(is_callable(array($product, $method))){
  ```
  
 # Learning about properties
+
+You are doing this by using the `get_class_vars()` function.
+It returns an associative array containing all the parameters of a class.
+
+```php
+
+$class_properties =  get_class_vars('ShopProductClass');
+var_dump($class_properties);
+
+
+```
