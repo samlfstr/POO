@@ -18,6 +18,7 @@ To facilitate the understanding of what you are doing
 you can use variables.
 */
 
+// url query ?var_name=sth
 $path = url_for('staff\subjects\show.php?id=');
 
 
