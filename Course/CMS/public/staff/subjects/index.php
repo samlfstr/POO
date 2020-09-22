@@ -2,6 +2,7 @@
 <?php
 
 /*
+ * DB :
  * This is what we call seeding =)
 */
 
@@ -19,7 +20,8 @@ you can use variables.
 */
 
 // url query ?var_name=sth
-$path = url_for('staff\subjects\show.php?id=');
+$path_show = url_for('staff/subjects/show.php?id=');
+$path_edit = url_for('staff/subjects/edit.php?id=');
 
 
 ?>
@@ -33,7 +35,7 @@ $path = url_for('staff\subjects\show.php?id=');
 	<h1>Subjects</h1>
 
 	<div class="actions">
-	 <a class="action" href="">Create New Subject</a>
+	 <a class="action" href="<?php echo url_for("/staff/subjects/new.php");?>">Create New Subject</a>
 	</div>
 	<!--Table-->
 	<table class="list">
@@ -58,12 +60,12 @@ $path = url_for('staff\subjects\show.php?id=');
 			 <td><?php echo $subject['menu_name']; ?></td>
 
 			 <td>
-				<a class="action" href=" <?php echo $path.
-					$subject['id']; ?>">View </a>
+				<a class="action" href=" <?php echo $path_show.
+					u($subject['id']); ?>">View </a>
 			 </td>
 
 			 <td><a class="action"
-							href="<?php echo url_for('staff\subjects\show.php') ?>">Edit</a>
+							href="<?php echo $path_edit . u($subject['id']); ?>">Edit</a>
 			 </td>
 
 			 <td><a class="action" href="<?php echo url_for('staff\subjects\show.php') ?>">Delete</a>

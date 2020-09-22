@@ -17,7 +17,7 @@ if($test == "404"){
 }
 ?>
 
-<?php $page_title = 'Create Subject'; ?>
+<?php $page_title = 'Edit Subject'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
@@ -26,8 +26,8 @@ if($test == "404"){
     <a class="style-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&#8592; Back to List</a>
   </button>
   <hr>
-  <div class="subject new">
-    <h3>Create Subject</h3>
+  <div class="subject edit">
+    <h3>Edit Subject</h3>
 
     <form action="" method="post">
 
@@ -56,7 +56,7 @@ if($test == "404"){
         <label class="custom-control-label" for="visible">Visible</label>
       </div>
 
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button type="submit" class="btn btn-primary">Edit</button>
     </form>
 
 

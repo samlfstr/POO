@@ -131,3 +131,15 @@ dd {
 .mb-one-half{
   margin-bottom: 1.5rem;
 }
+
+.style-link{
+  text-decoration: none !important;
+}
+
+li{
+  list-style-type: none;
+}
+
+.menu-nav{
+  padding-left: 30px;
+}
