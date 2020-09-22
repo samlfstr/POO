@@ -29,11 +29,12 @@ if($test == "404"){
   <div class="subject new">
     <h3>Create Subject</h3>
 
-    <form action="" method="post">
+    <!-- Send the data to the creaete.php file -->
+    <form action="<?php echo url_for('/staff/subjects/create.php');?>" method="post">
 
       <div class="form-group">
         <label for="menu_name">Menu Name</label>
-        <input type="text" class="form-control" id="menu_name" placeholder="Menu Name">
+        <input name="menu_name" type="text" class="form-control" id="menu_name" placeholder="Menu Name">
         <small id="menu_help" class="form-text text-muted">Please provide a menu name.</small>
       </div>
 
@@ -43,7 +44,7 @@ if($test == "404"){
           <label class="input-group-text" for="input-group-select"> Position </label>
         </div>
 
-        <select id="input-group-select">
+        <select name="position" id="input-group-select">
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
@@ -51,12 +52,11 @@ if($test == "404"){
       </div>
 
       <div class="custom-control custom-checkbox mb-one-half">
-        <input type="checkbox" class="custom-control-input" value="1" name="visible" id="visible">
-        <input type="hidden" class="custom-control-input" value="0" name="visible" id="visible">
+        <input type="checkbox" class="custom-control-input" name="visible" id="visible" value="1">
         <label class="custom-control-label" for="visible">Visible</label>
       </div>
 
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button name="submit" type="submit" class="btn btn-primary">Create</button>
     </form>
 
 

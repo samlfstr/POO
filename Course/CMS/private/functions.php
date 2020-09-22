@@ -7,6 +7,10 @@ function url_for($script_path){
    return WWW_ROOT . $script_path;
 }
 
+function redirect_to($location){
+  header("Location: ".$location);
+}
+
 function u($string=""){
   return urlencode($string);
 }
@@ -24,3 +28,9 @@ function error_500(){
   exit();
 }
 
+function is_post_request(){
+  return $_SERVER['REQUEST_METHOD'] == "POST";
+}
+function is_get_request(){
+  return $_SERVER['REQUEST_METHOD'] == "GET";
+}

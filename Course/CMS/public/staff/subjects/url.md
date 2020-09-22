@@ -59,7 +59,6 @@ I've named the file that I use for creating **`new.php`**.
 
 New.php file has a bootstrap form where each input has a class of `form-group`
 
-
 Code :
 
 ````html
@@ -89,3 +88,51 @@ for="input-group-select"> Position </label>
 Image :
 
 ![ScreenClip](https://user-images.githubusercontent.com/28195113/93888713-0a660f00-fcf1-11ea-8ab1-c790c15ee99a.png)
+
+# CRUD - Edit
+
+`Create` and `Edit` files are almost identical. To fill the edit file you are using url queries. You pulling the data from data base for the appropriate row.
+
+$_POST super global array store values of form inputs as key value paires.
+
+> php > 7.0
+
+````php
+$name = $_POST['name'] ?? "";
+````
+
+$_GET super global array store takes values from the url. Like url queries.
+
+
+> When you refresh the page it returns the same `post` request.
+>
+> But when you select the url and press enter it returns a `get` request.
+>
+> You can control that process by creating functions to check whether a button submitted or not.
+
+````php
+// if submitted returns post
+function is_post_request(){
+  return $_SERVER['REQUEST_METHOD'] == "POST";
+}
+// if url selected and pressed enter returns get
+function is_get_request(){
+  return $_SERVER['REQUEST_METHOD'] == "GET";
+}
+````
+
+And you can use that property to redirect the user if nothing is submitted.
+
+````php
+if (is_post_request()) {
+  $name = $_POST['menu_name'] ?? "";
+  $position = $_POST['position'] ?? "";
+  $visible = $_POST['visible'] ?? 0;
+
+  echo "Name : " . $name . "<br>";
+  echo "Position : " . $position . "<br>";
+  echo "Visible : " . $visible . "<br>";
+}else{
+  redirect_to(url_for('/staff/subjects/new.php'));
+}
+````
