@@ -57,6 +57,7 @@ footer {
   padding: 10px 20px;
   background: #0055DD;
   color: white;
+  margin-top: 3rem;
 }
 
 /* Actions */
@@ -125,4 +126,8 @@ dd {
 .errors ul {
   margin-bottom: 0;
   padding-left: 1em;
+}
+
+.mb-one-half{
+  margin-bottom: 1.5rem;
 }

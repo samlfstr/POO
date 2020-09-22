@@ -1,5 +1,7 @@
 <?php
 
+// enabling the output buffering
+ob_start();
 /*
 
 - Assingn paths to PHP constants
