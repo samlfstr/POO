@@ -6,16 +6,24 @@
  * This is what we call seeding =)
 */
 
-$subject_set = all_subjects();
+// Pull all the subjects from db
+$subject_list = all_subjects();
 
-var_dump($subject_set);
+// Take the row number of the db table
+$count = mysqli_num_rows($subject_list);
 
-$subjects = [
+// Save all the raw information into an array
+for($i=0; $i < $count; $i++){
+ $subjects[] = mysqli_fetch_assoc($subject_list);
+}
+
+
+/*$subjects = [
   ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'About Globe Bank'],
   ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Consumer'],
   ['id' => '3', 'position' => '3', 'visible' => '1', 'menu_name' => 'Small Business'],
   ['id' => '4', 'position' => '4', 'visible' => '1', 'menu_name' => 'Commercial'],
-];
+];*/
 
 
 /*
@@ -79,7 +87,7 @@ $path_edit = url_for('staff/subjects/edit.php?id=');
                <!-- END OF For Looop -->
 
 			<?php 
-				mysqli_free_result($subject_set);
+				mysqli_free_result($subject_list);
 			?>
 
           </table>
