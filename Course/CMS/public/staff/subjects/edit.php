@@ -3,17 +3,16 @@
 require_once('../../../private/initialize.php'); 
 
 
-$test =  $_GET['test'] ?? "";
+if (is_post_request()) {
+  $name = $_POST['menu_name'] ?? "";
+  $position = $_POST['position'] ?? "";
+  $visible = $_POST['visible'] ?? 0;
 
-if($test == "404"){
-  echo "There is a 404 error";
-  error_404();
-}else if($test == "500"){
-  echo "There is a 500 error";
-  error_500();
-}else if($test == "redirect"){
-  header("Location: index.php");
-  exit;
+  echo "Name : " . $name . "<br>";
+  echo "Position : " . $position . "<br>";
+  echo "Visible : " . $visible . "<br>";
+}else{
+  // redirect_to(url_for('/staff/subjects/new.php'));
 }
 ?>
 
@@ -29,7 +28,7 @@ if($test == "404"){
   <div class="subject edit">
     <h3>Edit Subject</h3>
 
-    <form action="" method="post">
+    <form action="<?php echo url_for('/staff/subjects/edit.php'); ?>" method="post">
 
       <div class="form-group">
         <label for="menu_name">Menu Name</label>

@@ -1,3 +1,6 @@
 {
-  "editor.folding": false
+  "editor.folding": false,
+  "phpserver.phpPath": "C:\\xampp\\php\\php.exe",
+  "phpserver.phpConfigPath": "C:\\xampp\\php\\php.ini",
+  "phpserver.browser": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 }
