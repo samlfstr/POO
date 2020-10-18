@@ -6,17 +6,23 @@
  * This is what we call seeding =)
 */
 
+$affected_rows = delete_subject(2);
+var_dump($affected_rows);
 // Pull all the subjects from db
 $subject_list = all_subjects();
 
-// Take the row number of the db table
+
+/* // Take the row number of the db table
 $count = mysqli_num_rows($subject_list);
 
 // Save all the raw information into an array
 for($i=0; $i < $count; $i++){
  $subjects[] = mysqli_fetch_assoc($subject_list);
 }
-
+ */
+while ($subject = mysqli_fetch_assoc($subject_list)){
+     $subjects[] = $subject;
+}
 
 /*$subjects = [
   ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'About Globe Bank'],
