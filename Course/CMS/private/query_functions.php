@@ -6,14 +6,17 @@
        
      $sql = "select * from subjects ";
      $sql .= "order by position asc";
-     return mysqli_query($db, $sql);
+     $result_set = mysqli_query($db, $sql); 
+     check_result_set($result_set);
+     return $result_set;
   }
 
-  function delete_subject($id){
+  function all_pages(){
      global $db;
 
-     $sql = "delete from subjects where id={$id}";
-     mysqli_query($db,$sql);
-
-     return mysqli_affected_rows($db);
+     $sql = "select * from pages ";
+     $sql .= "order by id asc";
+     $result_set = mysqli_query($db, $sql);
+     check_result_set($result_set);
+     return $result_set;
   }

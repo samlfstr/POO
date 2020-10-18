@@ -6,8 +6,7 @@
  * This is what we call seeding =)
 */
 
-$affected_rows = delete_subject(2);
-var_dump($affected_rows);
+
 // Pull all the subjects from db
 $subject_list = all_subjects();
 
@@ -92,7 +91,7 @@ $path_edit = url_for('staff/subjects/edit.php?id=');
                <?php endforeach; ?>
                <!-- END OF For Looop -->
 
-			<?php 
+               <?php 
 				mysqli_free_result($subject_list);
 			?>
 

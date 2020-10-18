@@ -4,13 +4,21 @@
 
 <?php
 
-$pages = [
+
+$page_list = all_pages();
+
+while($page = mysqli_fetch_assoc($page_list)){
+	$pages[] = $page;
+}
+
+
+/* $pages = [
  ['id' => 1, 'path' => "public/index.php"],
  ['id' => 2, 'path' => "Staff/index.php"],
  ['id' => 3, 'path' => "Staff/Pages/index.php"],
  ['id' => 4, 'path' => "Staff/Subject/index.php"],
  ['id' => 5, 'path' => "Staff/Subject/show.php"],
-];
+]; */
 
 $path = url_for('staff/pages/show.php?id=');
 
@@ -23,7 +31,9 @@ $path = url_for('staff/pages/show.php?id=');
 	 <thead>
 	 <tr>
 		<th> Pages</th>
-		<th> Path</th>
+		<th> Subject Id</th>
+		<th> Menu Name</th>
+		<th> Position </th>
 	 </tr>
 	 </thead>
 	 <tbody>
@@ -34,7 +44,13 @@ $path = url_for('staff/pages/show.php?id=');
        <?php echo $page['id']; ?>
 		 </td>
 		 <td>
-       <?php echo $page['path']; ?>
+       <?php echo $page['subject_id']; ?>
+		 </td>
+		 <td>
+       <?php echo $page['menu_name']; ?>
+		 </td>
+		 <td>
+       <?php echo $page['position']; ?>
 		 </td>
 
 		</tr>
