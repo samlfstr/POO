@@ -33,7 +33,7 @@ if(!$result_set){
 
 // 3. Use returned data (if any)
 while($subject = mysqli_fetch_assoc($result_set)){
-     echo $subject['menu_name'] . "<br />";
+     echo $subject['menu_name'] . b"<br />";
 }
 
 // 4. Release returned data

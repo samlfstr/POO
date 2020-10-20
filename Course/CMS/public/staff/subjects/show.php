@@ -2,7 +2,17 @@
 
 $id = $_GET['id'] ?? '1';
 
-echo h($id);
+$subject = get_subjects_with_id($id);
+$results = mysqli_fetch_row($subject);
+
+$get_columns = get_clumn_names();
+while ($column = mysqli_fetch_assoc($get_columns)){
+    $columns[] = $column['COLUMN_NAME'];
+}
+
+for ($i=0; $i < count($columns); $i++) { 
+     echo $columns[$i] . " : " . $results[$i] . "<br>";
+}
 
 ?>
 
