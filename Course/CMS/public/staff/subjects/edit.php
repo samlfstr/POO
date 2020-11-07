@@ -2,18 +2,10 @@
 
 require_once('../../../private/initialize.php'); 
 
+$id = $_GET['id'] ?? '1';
+$subject = get_subjects_with_id($id);
+$results = mysqli_fetch_row($subject);
 
-if (is_post_request()) {
-  $name = $_POST['menu_name'] ?? "";
-  $position = $_POST['position'] ?? "";
-  $visible = $_POST['visible'] ?? 0;
-
-  echo "Name : " . $name . "<br>";
-  echo "Position : " . $position . "<br>";
-  echo "Visible : " . $visible . "<br>";
-}else{
-  // redirect_to(url_for('/staff/subjects/new.php'));
-}
 ?>
 
 <?php $page_title = 'Edit Subject'; ?>
@@ -32,7 +24,7 @@ if (is_post_request()) {
 
       <div class="form-group">
         <label for="menu_name">Menu Name</label>
-        <input type="text" class="form-control" id="menu_name" placeholder="Menu Name">
+        <input type="text" class="form-control" id="menu_name" placeholder="<?php echo $results[1]; ?>">
         <small id="menu_help" class="form-text text-muted">Please provide a menu name.</small>
       </div>
 

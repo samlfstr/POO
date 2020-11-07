@@ -95,17 +95,19 @@ dl {
   clear: both;
   overflow: hidden;
   margin: 0.5em 0;
+  margin-bottom: inherit !important;
 }
 
 dt {
   float: left;
   font-weight: bold;
-  width: 125px;
+  white-space: pre;
 }
 
 dd {
   float: left;
   margin-left: 1em;
+  white-space: pre;
 }
 
 #operations {
@@ -143,3 +145,4 @@ li{
 .menu-nav{
   padding-left: 30px;
 }
+
