@@ -40,6 +40,13 @@ for ($i=0; $i < count($columns); $i++) {
 <div id="content">
      <div id="main-menu">
           <h2> <?php echo $results[1]; ?> </h2>
+
+  <button type="button" class="btn btn-light">
+    <a class="style-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">
+    &#8592; Back to List
+    </a>
+  </button>
+  
           <div class="attributes">
                <dl>
                     <dt>Menu Name :&#x20;</dt>

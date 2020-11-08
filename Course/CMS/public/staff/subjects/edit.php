@@ -2,9 +2,33 @@
 
 require_once('../../../private/initialize.php'); 
 
-$id = $_GET['id'] ?? '1';
-$subject = get_subjects_with_id($id);
-$results = mysqli_fetch_row($subject);
+if (is_post_request()) {
+  $name = $_POST['menu_name'] ?? "";
+  $position = $_POST['position'] ?? "";
+  $visible = $_POST['visible'] ?? 0;
+
+  $sql = "insert into subjects ";
+  $sql .= "(menu_name, position, visible) ";
+  $sql .= "values (";
+  $sql .= "'" . $name . "',";
+  $sql .= "'" . $position . "',";
+  $sql .= "'" . $visible . "'";
+  $sql .= ")";
+
+  $result = mysqli_query($db, $sql);
+
+  if($result){
+    $new_id = mysqli_insert_id($db);
+    redirect_to(url_for('staff/subjects/show.php?id=' . $new_id));
+  }else{
+    echo mysqli_error($db);
+    db_disconnect($db);
+    exit;
+  }
+
+}else{
+  redirect_to(url_for('/staff/subjects/new.php'));
+}
 
 ?>
 
@@ -35,9 +59,9 @@ $results = mysqli_fetch_row($subject);
         </div>
 
         <select id="input-group-select">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="one">One</option>
+          <option value="two">Two</option>
+          <option value="three" selected>Three</option>
         </select>
       </div>
 
