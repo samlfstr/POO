@@ -4,6 +4,8 @@ require_once('../../../private/initialize.php');
 
 $id = $_GET['id'] ?? '1';
 
+
+
 if (is_post_request()) {
 
     // Instead of using variables we are using an array to do the same thing
@@ -32,6 +34,10 @@ if (is_post_request()) {
 } else {
     $subject = get_subjects_with_id($id);
     $results = mysqli_fetch_row($subject);
+
+    $all_subjects = all_subjects();
+    $subject_count = mysqli_num_rows($all_subjects);
+    mysqli_free_result($all_subjects);
 }
 
 
@@ -64,10 +70,18 @@ if (is_post_request()) {
                         <label class="input-group-text" for="input-group-select"> Position </label>
                     </div>
 
-                    <select id="input-group-select">
-                        <option value="one">One</option>
-                        <option value="two">Two</option>
-                        <option value="three" selected>Three</option>
+                    <select id="input-group-select" name="position">
+                        <?php
+
+                        for ($i = 0; $i <= $subject_count; $i++) {
+                            echo "<option value=\"{$i}\"";
+                            if($results[2] == $i){
+                                echo " selected";
+                            }
+                            echo ">{$i}<option>";
+                        }
+
+                        ?>
                     </select>
                 </div>
 
