@@ -1,31 +1,33 @@
-<?php 
+<?php
 
-require_once('../../../private/initialize.php'); 
+require_once('../../../private/initialize.php');
 
 if (is_post_request()) {
-  $name = $_POST['menu_name'] ?? "";
-  $position = $_POST['position'] ?? "";
-  $visible = $_POST['visible'] ?? 0;
 
-  $sql = "insert into subjects ";
-  $sql .= "(menu_name, position, visible) ";
-  $sql .= "values (";
-  $sql .= "'" . $name . "',";
-  $sql .= "'" . $position . "',";
-  $sql .= "'" . $visible . "'";
-  $sql .= ")";
+    $cols = [];
+    $cols['menu_name'] = $_POST['menu_name'] ?? "";
+    $cols['position'] = $_POST['position'] ?? "";
+    $cols = $_POST['visible'] ?? 0;
 
-  $result = mysqli_query($db, $sql);
+    $sql = "insert into subjects ";
+    $sql .= "(menu_name, position, visible) ";
+    $sql .= "values (";
+    $sql .= "'" . $cols['menu_name'] . "',";
+    $sql .= "'" . $cols['position'] . "',";
+    $sql .= "'" . $cols['visible'] . "'";
+    $sql .= ")";
 
-  if($result){
-    $new_id = mysqli_insert_id($db);
-    redirect_to(url_for('staff/subjects/show.php?id=' . $new_id));
-  }else{
-    echo mysqli_error($db);
-    db_disconnect($db);
-    exit;
-  }
+    $result = mysqli_query($db, $sql);
 
-}else{
-  redirect_to(url_for('/staff/subjects/new.php'));
+    if ($result) {
+        $new_id = mysqli_insert_id($db);
+        redirect_to(url_for('staff/subjects/show.php?id=' . $new_id));
+    } else {
+        echo mysqli_error($db);
+        db_disconnect($db);
+        exit;
+    }
+
+} else {
+    redirect_to(url_for('/staff/subjects/new.php'));
 }

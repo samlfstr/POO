@@ -9,10 +9,12 @@ $results = mysqli_fetch_row($subject);
 
 /*
 // $results has only row values and not column
-// names uncomment to test it  
+// names uncomment to test it
 foreach ($results as $value) {
-    echo $value. "<br>"; 
-} */
+    echo $value. "<br>";
+}
+*/
+
 /* 
 $get_columns = get_clumn_names();
 while ($column = mysqli_fetch_assoc($get_columns)){
