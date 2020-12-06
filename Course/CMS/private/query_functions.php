@@ -59,5 +59,33 @@
       return $result_set;
   }
 
+  function create_subject($cols){
+      global $db;
+
+      $sql_query = "insert into subjects ";
+      $sql_query .= "(menu_name, position, visible) ";
+      $sql_query .= "values (";
+      $sql_query .= "'" . $cols['menu_name'] . "',";
+      $sql_query .= "'" . $cols['position'] . "',";
+      $sql_query .= "'" . $cols['visible'] . "'";
+      $sql_query .= ")";
+
+      $result_set = mysqli_query($db, $sql_query);
+      check_result_set($result_set);
+      return $result_set;
+  }
+
+  function delete_subject($id){
+      global $db;
+
+      $sql_query = "delete from subjects ";
+      $sql_query .= "where id=";
+      $sql_query .= "'" . $id . "'";
+
+      $result_set = mysqli_query($db, $sql_query);
+      check_result_set($result_set);
+      return $result_set;
+  }
+
   
 

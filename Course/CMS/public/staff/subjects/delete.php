@@ -1,13 +1,10 @@
 <?php  require_once ('../../../private/initialize.php');
 
 
-$menu_name = $_GET['menu_name'] ?? '1';
+$id = $_GET['id'] ?? '1';
 
-$sql = "delete from subjects ";
-$sql .= "where menu_name=";
-$sql .= "'" . $menu_name . "'";
+$result = delete_subject($id);
 
-$result = mysqli_query($db, $sql);
 
 if($result){
   redirect_to(url_for('staff\subjects\index.php'));
@@ -16,3 +13,6 @@ if($result){
   db_disconnect($db);
   exit;
 }
+?>
+
+

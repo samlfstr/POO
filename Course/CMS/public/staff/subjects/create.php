@@ -9,15 +9,7 @@ if (is_post_request()) {
     $cols['position'] = $_POST['position'] ?? 1;
     $cols['visible'] = $_POST['visible'] ?? 0;
 
-    $sql = "insert into subjects ";
-    $sql .= "(menu_name, position, visible) ";
-    $sql .= "values (";
-    $sql .= "'" . $cols['menu_name'] . "',";
-    $sql .= "'" . $cols['position'] . "',";
-    $sql .= "'" . $cols['visible'] . "'";
-    $sql .= ")";
-
-    $result = mysqli_query($db, $sql);
+    $result = create_subject($cols);
 
     if ($result) {
         $new_id = mysqli_insert_id($db);
