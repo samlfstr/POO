@@ -89,7 +89,7 @@ $path_delete = url_for('staff/subjects/delete.php?menu_name=');
         <td><a class="action" href="<?php echo $path_edit . u($subject['id']); ?>">Edit</a>
         </td>
 
-        <td><a class="action" href="<?php echo $path_delete . u($subject['menu_name']); ?>">Delete</a>
+        <td id="delete-btn"><a class="action btn btn-primary" href="<?php echo $path_delete . u($subject['menu_name']); ?>">Delete</a>
         </td>
 
       </tr>

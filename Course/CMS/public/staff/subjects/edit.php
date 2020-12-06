@@ -5,23 +5,16 @@ require_once('../../../private/initialize.php');
 $id = $_GET['id'] ?? '1';
 
 
-
 if (is_post_request()) {
 
     // Instead of using variables we are using an array to do the same thing
     $cols = [];
+    $cols['id'] = $id;
     $cols['menu_name'] = $_POST['menu_name'] ?? "";
     $cols['position'] = $_POST['position'] ?? "1";
     $cols['visible'] = $_POST['visible'] ?? 0;
 
-
-    $sql_query = "Update subjects Set ";
-    $sql_query .= "menu_name='" . $cols['menu_name'] . "', ";
-    $sql_query .= "position='" . $cols['position'] . "', ";
-    $sql_query .= "visible='" . $cols['visible'] . "' ";
-    $sql_query .= "Where id='" . $id . "'";
-
-    $result = mysqli_query($db, $sql_query);
+    $result = update_subject($cols);
 
     if ($result) {
         redirect_to(url_for('staff/subjects/show.php?id=' . $id));

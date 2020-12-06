@@ -45,5 +45,19 @@
 
   }
 
+  function update_subject($cols){
+      global $db;
+
+      $sql_query = "Update subjects Set ";
+      $sql_query .= "menu_name='" . $cols['menu_name'] . "', ";
+      $sql_query .= "position='" . $cols['position'] . "', ";
+      $sql_query .= "visible='" . $cols['visible'] . "' ";
+      $sql_query .= "Where id='" . $cols['id'] . "'";
+
+      $result_set = mysqli_query($db, $sql_query);
+      check_result_set($result_set);
+      return $result_set;
+  }
+
   
 

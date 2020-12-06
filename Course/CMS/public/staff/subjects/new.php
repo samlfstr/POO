@@ -4,6 +4,7 @@ require_once('../../../private/initialize.php');
 
 
 $test =  $_GET['test'] ?? "";
+$id = $_GET['id'] ?? 1;
 
 if($test == "404"){
   echo "There is a 404 error";
@@ -15,6 +16,11 @@ if($test == "404"){
   header("Location: index.php");
   exit;
 }
+
+$all_subjects = all_subjects();
+$subject_count = mysqli_num_rows($all_subjects);
+mysqli_free_result($all_subjects);
+
 ?>
 
 <?php $page_title = 'Create Subject'; ?>
@@ -44,11 +50,15 @@ if($test == "404"){
           <label class="input-group-text" for="input-group-select"> Position </label>
         </div>
 
-        <select name="position" id="input-group-select">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
+          <select id="input-group-select" name="position">
+              <?php
+
+              for ($i = 0; $i <= $subject_count; $i++) {
+                  echo "<option value=\"{$i}\">{$i}<option>";
+              }
+
+              ?>
+          </select>
       </div>
 
       <div class="custom-control custom-checkbox mb-one-half">

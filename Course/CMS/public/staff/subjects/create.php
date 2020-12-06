@@ -6,8 +6,8 @@ if (is_post_request()) {
 
     $cols = [];
     $cols['menu_name'] = $_POST['menu_name'] ?? "";
-    $cols['position'] = $_POST['position'] ?? "";
-    $cols = $_POST['visible'] ?? 0;
+    $cols['position'] = $_POST['position'] ?? 1;
+    $cols['visible'] = $_POST['visible'] ?? 0;
 
     $sql = "insert into subjects ";
     $sql .= "(menu_name, position, visible) ";

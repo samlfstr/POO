@@ -56,11 +56,11 @@ for ($i=0; $i < count($columns); $i++) {
                </dl>
                <dl>
                     <dt>Position :&#x20;</dt>
-                    <dd><?php echo $results[3]; ?></dd>
+                    <dd><?php echo $results[2]; ?></dd>
                </dl>
                <dl>
                     <dt>Visible :&#x20;</dt>
-                    <dd><?php echo $results[2]; ?></dd>
+                    <dd><?php echo $results[3]; ?></dd>
                </dl>
           </div>
 
