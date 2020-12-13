@@ -87,5 +87,29 @@
       return $result_set;
   }
 
-  
+
+function get_pages_with_id($id){
+    // $db is not accessible so
+    global $db;
+
+    $sql = "select * from pages ";
+    $sql .= "where id='{$id}'";
+    $result_set = mysqli_query($db, $sql);
+    check_result_set($result_set);
+    return $result_set;
+}
+
+function update_page($cols){
+    global $db;
+
+    $sql_query = "Update pages Set ";
+    $sql_query .= "menu_name='" . $cols['menu_name'] . "', ";
+    $sql_query .= "position='" . $cols['position'] . "', ";
+    $sql_query .= "visible='" . $cols['visible'] . "' ";
+    $sql_query .= "Where id='" . $cols['id'] . "'";
+
+    $result_set = mysqli_query($db, $sql_query);
+    check_result_set($result_set);
+    return $result_set;
+}
 
