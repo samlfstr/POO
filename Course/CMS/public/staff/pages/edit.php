@@ -54,7 +54,7 @@ if (is_post_request()) {
                 <div class="form-group">
                     <label for="menu_name">Page Name</label>
                     <input name="menu_name" type="text" class="form-control" id="menu_name"
-                           placeholder="<?php echo $results[2]; ?>">
+                           placeholder="<?php echo $results[1]; ?>">
                     <small id="menu_help" class="form-text text-muted">Please provide a menu name.</small>
                 </div>
 
@@ -68,11 +68,11 @@ if (is_post_request()) {
                         <?php
 
                         for ($i = 0; $i <= $subject_count; $i++) {
-                            echo "<option value=\"{$i}\"";
-                            if($results[1] == $i){
-                                echo " selected";
+                            echo '<option value="'.$i.'"';
+                            if($results[0] == $i){
+                                echo ' selected="selected"';
                             }
-                            echo ">{$i}<option>";
+                            echo '>' . $i . '</option>';
                         }
 
                         ?>

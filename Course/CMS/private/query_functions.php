@@ -113,3 +113,15 @@ function update_page($cols){
     return $result_set;
 }
 
+function delete_page($id){
+    global $db;
+
+    $sql_query = "delete from pages ";
+    $sql_query .= "where id=";
+    $sql_query .= "'" . $id . "'";
+
+    $result_set = mysqli_query($db, $sql_query);
+    check_result_set($result_set);
+    return $result_set;
+}
+

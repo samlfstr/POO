@@ -11,6 +11,10 @@ while ($page = mysqli_fetch_assoc($page_list)) {
     $pages[] = $page;
 }
 
+if(is_empty($pages)){
+    redirect_to(url_for("staff/pages/empty_list.php"));
+}
+
 
 /* $pages = [
  ['id' => 1, 'path' => "public/index.php"],
@@ -20,8 +24,9 @@ while ($page = mysqli_fetch_assoc($page_list)) {
  ['id' => 5, 'path' => "Staff/Subject/show.php"],
 ]; */
 
-$path_pages = url_for('staff/pages/show.php?id=');
-$path_edit = url_for('staff/pages/edit.php?id=');
+$path_pages_p = url_for('staff/pages/show.php?id=');
+$path_edit_p = url_for('staff/pages/edit.php?id=');
+$path_delete_p = url_for('staff/pages/delete.php?id=');
 
 ?>
 
@@ -56,11 +61,11 @@ $path_edit = url_for('staff/pages/edit.php?id=');
                         <?php echo $page['position']; ?>
                     </td>
                     <td id="d-btn">
-                        <a class="action btn btn-outline-info" href="<?php echo $path_pages . u(h($page['id'])); ?>">View</a>
+                        <a class="action btn btn-outline-info" href="<?php echo $path_pages_p . u(h($page['id'])); ?>">View</a>
                     </td>
                     <td id="d-btn">
                         <a class="action btn btn-outline-secondary"
-                           href="<?php echo $path_edit . u(h($page['id'])); ?>">Edit</a>
+                           href="<?php echo $path_edit_p . u(h($page['id'])); ?>">Edit</a>
                     </td>
 
                     <td id="d-btn">
@@ -89,7 +94,7 @@ $path_edit = url_for('staff/pages/edit.php?id=');
 
                                 <!--Footer-->
                                 <div class="modal-footer flex-center">
-                                    <a href="<?php echo $path_delete . u($subject['id']); ?>"
+                                    <a href="<?php echo $path_delete_p . u($page['id']); ?>"
                                        class="btn  btn-outline-danger">Yes</a>
                                     <a type="button" class="btn  btn-light waves-effect" data-dismiss="modal">No</a>
                                 </div>

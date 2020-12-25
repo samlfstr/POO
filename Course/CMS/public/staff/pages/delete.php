@@ -3,11 +3,11 @@
 
 $id = $_GET['id'] ?? '1';
 
-$result = delete_subject($id);
+$result = delete_page($id);
 
 
 if($result){
-    redirect_to(url_for('staff\subjects\index.php'));
+    redirect_to(url_for('staff\pages\index.php'));
 }else{
     echo mysqli_error($db);
     db_disconnect($db);

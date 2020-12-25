@@ -26,6 +26,7 @@ define("PUBLIC_PATH", PROJECT_PATH.'/public');
 // shared path is equal to ...
 define("SHARED_PATH", PRIVATE_PATH.'/shared');
 
+// this fucking varible is an integer
 $public_end = strpos($_SERVER['SCRIPT_NAME'],'/public') + 7;
 // or full path containing the name of the relative
 // file we are executing

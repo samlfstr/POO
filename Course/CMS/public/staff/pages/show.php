@@ -50,15 +50,15 @@ for ($i=0; $i < count($columns); $i++) {
             <div class="attributes">
                 <dl>
                     <dt>Page Name :&#x20;</dt>
-                    <dd><?php echo $results[2]; ?></dd>
+                    <dd><?php echo $results[1]; ?></dd>
                 </dl>
                 <dl>
-                    <dt>Subject Id :&#x20;</dt>
+                    <dt>Id :&#x20;</dt>
                     <dd><?php echo $results[0]; ?></dd>
                 </dl>
                 <dl>
                     <dt>Position :&#x20;</dt>
-                    <dd><?php echo $results[1]; ?></dd>
+                    <dd><?php echo $results[2]; ?></dd>
                 </dl>
             </div>
 
