@@ -23,6 +23,10 @@ while ($subject = mysqli_fetch_assoc($subject_list)) {
     $subjects[] = $subject;
 }
 
+if(is_empty($pages)){
+    redirect_to(url_for("staff/pages/empty_list.php"));
+}
+
 /*$subjects = [
   ['id' => '1', 'position' => '1', 'visible' => '1', 'menu_name' => 'About Globe Bank'],
   ['id' => '2', 'position' => '2', 'visible' => '1', 'menu_name' => 'Consumer'],
