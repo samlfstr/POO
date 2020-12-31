@@ -28,7 +28,7 @@ define("SHARED_PATH", PRIVATE_PATH.'/shared');
 
 // this fucking varible is an integer
 $public_end = strpos($_SERVER['SCRIPT_NAME'],'/public') + 7;
-// or full path containing the name of the relative
+// or full path containing the name of the relatives
 // file we are executing
 $doc_root = substr($_SERVER['SCRIPT_NAME'],0,$public_end);
 define("WWW_ROOT",$doc_root);
@@ -36,5 +36,6 @@ define("WWW_ROOT",$doc_root);
 require_once('functions.php');
 require_once('database.php');
 require_once('query_functions.php');
+require_once('pg_database.php');
 
-$db = db_connect();
+$pg = pg_connection();

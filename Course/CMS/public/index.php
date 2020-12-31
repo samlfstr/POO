@@ -1,4 +1,4 @@
-<?php require_once ('../../../private/shared/initialize.php')?>
+<?php require_once('../private/initialize.php');?>
 <!doctype html>
 <html lang="en">
 <head>
