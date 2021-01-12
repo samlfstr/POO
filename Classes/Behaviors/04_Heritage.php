@@ -4,7 +4,7 @@
  * Heritage
  */
 
-class Utilisateur
+class User
 {
     var $admin = false;
     var $first_name="";
@@ -24,13 +24,13 @@ class Utilisateur
      * [User Name]
      * @return string
      */
-    public function getUserName(): string
+    public function getUserName() : string
     {
         return $this->user_name;
     }
 }
 
-class Client extends Utilisateur {
+class Client extends User {
     var $city;
     var $state;
     var $country;
@@ -45,16 +45,16 @@ class Client extends Utilisateur {
 
 }
 
-class Admin extends Utilisateur{
+class Admin extends User{
     var $admin = true;
 }
 
-$user = new Utilisateur();
+$user = new User();
 $user->first_name = "Samuel";
 $user->last_name = "Foster";
 $user->user_name = "Samlfstr";
 
-echo $user->getFullName() . "<br>";
+echo "User Class -> : " . $user->getFullName() . "<br>";
 
 $client = new Client();
 $client->first_name = "Aaron";

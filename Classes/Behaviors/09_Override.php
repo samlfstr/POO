@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Parent keyword represents the class itself in which used*
+ * */
+
 
 class TenthClass
 {

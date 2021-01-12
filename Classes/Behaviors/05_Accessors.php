@@ -1,23 +1,39 @@
 <?php
 
+/*
+ * With heritage I can have access to the main classes variables but there are some cases
+ * In the first case / situation
+ * I declare a new variable in the child class as a copy of the variable that inside vechicle
+ *  - When I do that I can have access only to the second variable the copy one. And not the
+ *  - that of parent class.
+ * It's important because if you want to understand why you can't access the parent classes variable
+ * that's because you've a variable declared in the child classes.
+ *
+ */
+
+
 class Vehicle
 {
     var $color;
     protected $wheels;
-    var $doors;
+    var $doors = 3;
 
-    protected function upload_image($file){
+    protected function upload_image($file)
+    {
         //...
     }
-    public function waterproof(){
+
+    public function waterproof()
+    {
         return true;
     }
 
 }
 
-class Car extends Vehicle{
-    var $wheels = 4;
-    var $doors = 4;
+class Car extends Vehicle
+{
+    protected $wheels = 4;
+    var $doors;
 
     public function waterproof()
     {
@@ -25,7 +41,8 @@ class Car extends Vehicle{
     }
 }
 
-class Motorcycle extends Vehicle{
+class Motorcycle extends Vehicle
+{
     var $wheels = 2;
     var $doors = 0;
 
@@ -38,5 +55,7 @@ class Motorcycle extends Vehicle{
 
 $car = new Car();
 echo $car->doors;
+// The access is allowed only inside classes
+/*echo $car->wheels;*/
 
 

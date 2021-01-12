@@ -1,4 +1,21 @@
 <?php require_once('../private/initialize.php');?>
+
+<?php
+$cols['menu_name'] = "x";
+$cols['position'] = "y";
+$cols['visible'] = "z";
+$cols['id'] = "1";
+
+$sql_query = "Update pages Set ";
+$sql_query .= "menu_name='" . $cols['menu_name'] . "', ";
+$sql_query .= "position='" . $cols['position'] . "', ";
+$sql_query .= "visible='" . $cols['visible'] . "' ";
+$sql_query .= "Where id='" . $cols['id'] . "'";
+
+echo $sql_query;
+die();
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
