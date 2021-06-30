@@ -18,7 +18,7 @@ class ThirteenthStatic
      */
     public static function ageInfo() : string {
         // return self::$age == 1 ? "One" : "Two";
-        return static ::$age == 1 ? "One" : "Two";
+        return static::$age == 1 ? "One" : "Two";
     }
 }
 

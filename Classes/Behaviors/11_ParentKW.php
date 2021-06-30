@@ -18,7 +18,7 @@ class HalfChef extends TwelweChef{
     }
 }
 
-Chef::make_dinner();
+TwelweChef::make_dinner();
 // Cook food;
 
 HalfChef::make_dinner();
