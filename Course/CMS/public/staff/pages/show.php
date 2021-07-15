@@ -1,4 +1,4 @@
-<?php require_once ('../../../private/initialize.php');
+<?php require_once('../../../private/initialize.php');
 
 $id = $_GET['id'] ?? '1';
 
@@ -37,34 +37,34 @@ for ($i=0; $i < count($columns); $i++) {
 ?>
 
 <?php $page_title = 'Staff Menu'; ?>
-<?php include(SHARED_PATH.'\staff_header.php')?>
-    <!--Content area-->
-    <div id="content">
-        <div id="main-menu">
-            <button type="button" class="btn btn-light">
-                <a class="style-link" href="<?php echo url_for('/staff/pages/index.php'); ?>">  Back to List
-                </a>
-            </button>
-            <h2> <?php echo $results[2]; ?> </h2>
+<?php include(SHARED_PATH . '\staff_header.php') ?>
+  <!--Content area-->
+  <div id="content">
+    <div id="main-menu">
+      <button type="button" class="btn btn-light">
+        <a class="style-link" href="<?php echo url_for('/staff/pages/index.php'); ?>"> Back to List
+        </a>
+      </button>
+      <h2> <?php echo $results[2]; ?> </h2>
 
-            <div class="attributes">
-                <dl>
-                    <dt>Page Name :&#x20;</dt>
-                    <dd><?php echo $results[1]; ?></dd>
-                </dl>
-                <dl>
-                    <dt>Id :&#x20;</dt>
-                    <dd><?php echo $results[0]; ?></dd>
-                </dl>
-                <dl>
-                    <dt>Position :&#x20;</dt>
-                    <dd><?php echo $results[2]; ?></dd>
-                </dl>
-            </div>
+      <div class="attributes">
+        <dl>
+          <dt>Page Name :&#x20;</dt>
+          <dd><?php echo $results[1]; ?></dd>
+        </dl>
+        <dl>
+          <dt>Id :&#x20;</dt>
+          <dd><?php echo $results[0]; ?></dd>
+        </dl>
+        <dl>
+          <dt>Position :&#x20;</dt>
+          <dd><?php echo $results[2]; ?></dd>
+        </dl>
+      </div>
 
-
-        </div>
 
     </div>
-    <!-- END OF Content area-->
-<?php include(SHARED_PATH.'\staff_footer.php')?>
+
+  </div>
+  <!-- END OF Content area-->
+<?php include(SHARED_PATH . '\staff_footer.php') ?>

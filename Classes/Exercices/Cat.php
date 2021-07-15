@@ -15,30 +15,36 @@ class Cat
         $this->energy = "5";
     }
 
-    public function meow(){
-        echo "Meow !!! ". "<br>";
-    }
-    public static function create(){
+    public static function create()
+    {
         self::$instance++;
         $class_name = get_called_class();
         return new $class_name;
     }
-    public function status(){
-        return "Mood : ".$this->mood."<br>"."Hungary : ".$this->hungary."<br>"."Energy : "
-            .$this->energy."<br>";
+
+    public function meow()
+    {
+        echo "Meow !!! " . "<br>";
+    }
+
+    public function status()
+    {
+        return "Mood : " . $this->mood . "<br>" . "Hungary : " . $this->hungary . "<br>" . "Energy : "
+            . $this->energy . "<br>";
     }
 
 }
 
-class Sleep extends Cat{
+class Sleep extends Cat
+{
 
-   public function __construct()
-   {
-       parent::__construct();
-       $this->energy++;
-       $this->hungary++;
-       $this->mood = "Down";
-   }
+    public function __construct()
+    {
+        parent::__construct();
+        $this->energy++;
+        $this->hungary++;
+        $this->mood = "Down";
+    }
 
     public static function create()
     {
@@ -46,7 +52,9 @@ class Sleep extends Cat{
     }
 
 }
-class Play extends Cat{
+
+class Play extends Cat
+{
     public function __construct()
     {
         parent::__construct();
@@ -54,12 +62,15 @@ class Play extends Cat{
         $this->hungary++;
         $this->mood = "Up";
     }
+
     public static function create()
     {
         return parent::create();
     }
 }
-class Feed extends Cat{
+
+class Feed extends Cat
+{
     public function __construct()
     {
         parent::__construct();
@@ -67,6 +78,7 @@ class Feed extends Cat{
         $this->hungary--;
         $this->mood = "Up";
     }
+
     public static function create()
     {
         return parent::create();

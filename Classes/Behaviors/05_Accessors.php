@@ -15,25 +15,25 @@
 class Vehicle
 {
     var $color;
-    protected $wheels;
     var $doors = 3;
-
-    protected function upload_image($file)
-    {
-        //...
-    }
+    protected $wheels;
 
     public function waterproof()
     {
         return true;
     }
 
+    protected function upload_image($file)
+    {
+        //...
+    }
+
 }
 
 class Car extends Vehicle
 {
-    protected $wheels = 4;
     var $doors;
+    protected $wheels = 4;
 
     public function waterproof()
     {

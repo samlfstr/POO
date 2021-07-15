@@ -4,10 +4,10 @@
 
 class FourteenthCreate
 {
+    public const CATEGORIES = ['Male', 'Female', 'Transgender'];
     public $name;
     public $age;
     public $adress;
-    public const CATEGORIES = ['Male', 'Female', 'Transgender'];
 
     public static function create()
     {
@@ -17,8 +17,8 @@ class FourteenthCreate
 
     public function info()
     {
-        return 'Name :'. $this->name."<br>"."Age : ".$this->age."<br>".'Adress :'
-            .$this->adress."<br>";
+        return 'Name :' . $this->name . "<br>" . "Age : " . $this->age . "<br>" . 'Adress :'
+            . $this->adress . "<br>";
     }
 }
 

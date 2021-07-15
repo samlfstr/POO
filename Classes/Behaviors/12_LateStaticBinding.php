@@ -16,13 +16,15 @@ class ThirteenthStatic
     /**
      * @return string
      */
-    public static function ageInfo() : string {
+    public static function ageInfo(): string
+    {
         // return self::$age == 1 ? "One" : "Two";
         return static::$age == 1 ? "One" : "Two";
     }
 }
 
-class Subclass extends ThirteenthStatic {
+class Subclass extends ThirteenthStatic
+{
     // Try to override the age variable
     protected static $age = 1;
 }

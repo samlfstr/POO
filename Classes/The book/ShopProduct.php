@@ -25,13 +25,15 @@ class ShopProduct
  */
 class ShopProductWriter
 {
-    function writeShopProduct(ShopProduct $product){
+    function writeShopProduct(ShopProduct $product)
+    {
         $print = $product->producer_name . " " . $product->title . " " . $product->price;
         echo $print;
     }
 }
+
 //I am passing the Mainclass's instance as argument in another subclass's function.
-$shop_product = new ShopProduct('Phone','150$','Apple'); // instance
+$shop_product = new ShopProduct('Phone', '150$', 'Apple'); // instance
 $product = new ShopProductWriter(); // sub-class
 $product->writeShopProduct($shop_product);
 

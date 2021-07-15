@@ -10,15 +10,15 @@ class Referance
 {
     public $name;
 
+    public static function create()
+    {
+        $class_name = get_called_class();
+        return new $class_name;
+    }
 
     public function __clone()
     {
 
-    }
-
-    public static function create(){
-        $class_name = get_called_class();
-        return new $class_name;
     }
 
     /**
@@ -45,8 +45,8 @@ $a->name = "First Name";
 $b = $a;
 $b->name = "Second Name";
 
-echo "B : " .$b->getName() . " <br>";
-echo "A : " .$a->getName() . " <br>";
+echo "B : " . $b->getName() . " <br>";
+echo "A : " . $a->getName() . " <br>";
 echo "<hr>";
 
 /*
@@ -57,5 +57,5 @@ $a->name = "First Name";
 $b = clone $a;
 $b->name = "Second Name";
 
-echo "A : " .$a->getName() . " <br>";
-echo "B : " .$b->getName() . " <br>";
+echo "A : " . $a->getName() . " <br>";
+echo "B : " . $b->getName() . " <br>";

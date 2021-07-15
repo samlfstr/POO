@@ -32,9 +32,9 @@ class Bicyle
      * [Getter]
      * @return string
      */
-    public function getNameAndDescription() : string
+    public function getNameAndDescription(): string
     {
-        return "Brand : " . $this->brand . "<br>" . "Description : ".
+        return "Brand : " . $this->brand . "<br>" . "Description : " .
             $this->description;
     }
 
@@ -42,7 +42,7 @@ class Bicyle
      * [Getter]
      * @return float
      */
-    public function getWeight_lbs() : float
+    public function getWeight_lbs(): float
     {
         return $this->weight_kg * 2.205;
     }
@@ -58,7 +58,7 @@ class Bicyle
 
 }
 
-$brandnew = new Bicyle("Bianchy", "One of the best products in the market",17);
-echo $brandnew->getNameAndDescription()."<br>";
-echo "Weight in lbs : " . $brandnew->getWeight_lbs()."<br>";
+$brandnew = new Bicyle("Bianchy", "One of the best products in the market", 17);
+echo $brandnew->getNameAndDescription() . "<br>";
+echo "Weight in lbs : " . $brandnew->getWeight_lbs() . "<br>";
 echo "Weight in kg : " . $brandnew->getWeightKg();

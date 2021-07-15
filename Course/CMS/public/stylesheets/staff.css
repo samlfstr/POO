@@ -77,10 +77,12 @@ table {
     border-collapse: collapse;
     vertical-align: top;
 }
+
 table tr:hover {
     cursor: pointer !important;
 }
-table tr th{
+
+table tr th {
     cursor: default !important;
 }
 

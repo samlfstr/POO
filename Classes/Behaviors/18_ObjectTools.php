@@ -56,8 +56,9 @@ class CdProductClass extends ShopProductClass
                                 $play_time)
     {
         parent::__construct($title, $producer_f_name, $producer_m_name, $price);
-        $this->play_time =$play_time;
+        $this->play_time = $play_time;
     }
+
     /**
      * @return mixed
      */
@@ -85,6 +86,7 @@ class BookProductClass extends ShopProductClass
         parent::__construct($title, $producer_f_name, $producer_m_name, $price);
         $this->num_pages = $num_pages;
     }
+
     /**
      * @return mixed
      */
@@ -103,7 +105,7 @@ class BookProductClass extends ShopProductClass
 
 //  Learning about an Object or Class
 
- $shop_product = new BookProductClass('Ball','Samuel', 'Foster',50,139);
+$shop_product = new BookProductClass('Ball', 'Samuel', 'Foster', 50, 139);
 
 // get_class
 
@@ -128,5 +130,5 @@ else{
 var_dump($class_methodes);*/
 
 // Learning about properties
-$class_properties =  get_class_vars('ShopProductClass');
+$class_properties = get_class_vars('ShopProductClass');
 var_dump($class_properties);

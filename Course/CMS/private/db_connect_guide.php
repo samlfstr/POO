@@ -13,11 +13,11 @@ $dbname = 'globe_bank';
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 // Test if connection succeded
-if(mysqli_connect_errno()){
-     $msg = "Database connection failed : ";
-     $msg .= mysqi_conect_error();
-     $msg .= " (" . mysqli_connect_errno() . ")";
-     exit($msg);
+if (mysqli_connect_errno()) {
+    $msg = "Database connection failed : ";
+    $msg .= mysqi_conect_error();
+    $msg .= " (" . mysqli_connect_errno() . ")";
+    exit($msg);
 }
 
 // 2. Perform database query
@@ -25,15 +25,14 @@ $query = "SELECT * FROM subjects";
 $result_set = mysqli_query($connection, $query);
 
 // Test if query succeded
-if(!$result_set){
-     exit("Database query failed.");
+if (!$result_set) {
+    exit("Database query failed.");
 }
 
 
-
 // 3. Use returned data (if any)
-while($subject = mysqli_fetch_assoc($result_set)){
-     echo $subject['menu_name'] . b"<br />";
+while ($subject = mysqli_fetch_assoc($result_set)) {
+    echo $subject['menu_name'] . b"<br />";
 }
 
 // 4. Release returned data

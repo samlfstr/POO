@@ -1,10 +1,9 @@
 # Send and Recieve Data
 
-`First` I created a table and added on that html & php simple table a link called view
-. I needed to know dynamically what was the view link of the raw that I clicked. And
-you are doing this by using php super global arrays and on the html side with url
-queries. A `url query` is the part of the url after the question mark `_/page?*=_` * is
-the variable name and = after the equal sign is the value of that variable.
+`First` I created a table and added on that html & php simple table a link called view . I needed to know dynamically
+what was the view link of the raw that I clicked. And you are doing this by using php super global arrays and on the
+html side with url queries. A `url query` is the part of the url after the question mark `_/page?*=_` * is the variable
+name and = after the equal sign is the value of that variable.
 
 ```html
 <td>
@@ -21,8 +20,8 @@ And to take the value from another script all you have to do is :
 ?>
 ```
 
-But there is a `problem` when you do that and in the url there is no `?id` naturally it
-returns an error. Because get recieves nothing.
+But there is a `problem` when you do that and in the url there is no `?id` naturally it returns an error. Because get
+recieves nothing.
 
 Solution using the null coalessing operator :
 
@@ -35,7 +34,8 @@ Solution using the null coalessing operator :
 
 # Url encode
 
-The common problem with it is that, some time it may happen that we need to pass some string to URL, what happens is that when we use characters below it may be interpreted by the browser as it was url parameter even it is not the case.
+The common problem with it is that, some time it may happen that we need to pass some string to URL, what happens is
+that when we use characters below it may be interpreted by the browser as it was url parameter even it is not the case.
 
 To prevent that happening php gives us two builtin function
 
@@ -91,7 +91,8 @@ Image :
 
 # CRUD - Edit
 
-`Create` and `Edit` files are almost identical. To fill the edit file you are using url queries. You pulling the data from data base for the appropriate row.
+`Create` and `Edit` files are almost identical. To fill the edit file you are using url queries. You pulling the data
+from data base for the appropriate row.
 
 $_POST super global array store values of form inputs as key value paires.
 

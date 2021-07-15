@@ -10,11 +10,14 @@ class TenthClass
     public static $gender = ['male', 'female', 'unknown'];
 }
 
-class Person extends TenthClass{
+class Person extends TenthClass
+{
 
     // I am able to overwrite and when I do that a new var is created
     public static $gender = null;
-    public static function modify(){
+
+    public static function modify()
+    {
         parent::$gender[] = "alien";
     }
 }

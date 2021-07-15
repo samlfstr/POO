@@ -7,30 +7,31 @@
 class User
 {
     var $admin = false;
-    var $first_name="";
-    var $last_name="";
-    var $user_name="";
+    var $first_name = "";
+    var $last_name = "";
+    var $user_name = "";
 
     /**
      * [Full Name]
      * @return string
      */
-    public function getFullName() : string
+    public function getFullName(): string
     {
-        return $this->first_name . " " .$this->last_name;
+        return $this->first_name . " " . $this->last_name;
     }
 
     /**
      * [User Name]
      * @return string
      */
-    public function getUserName() : string
+    public function getUserName(): string
     {
         return $this->user_name;
     }
 }
 
-class Client extends User {
+class Client extends User
+{
     var $city;
     var $state;
     var $country;
@@ -39,13 +40,15 @@ class Client extends User {
      * [Client Location]
      * @return string
      */
-    public function location(){
+    public function location()
+    {
         return $this->city . ", " . $this->state . ", " . $this->country;
     }
 
 }
 
-class Admin extends User{
+class Admin extends User
+{
     var $admin = true;
 }
 
@@ -59,7 +62,7 @@ echo "User Class -> : " . $user->getFullName() . "<br>";
 $client = new Client();
 $client->first_name = "Aaron";
 $client->last_name = "Foster";
-$client->user_name ="Aaronfstr";
+$client->user_name = "Aaronfstr";
 $client->city = "Ankara";
 $client->state = "Yenimahalle";
 $client->country = "Turkey";

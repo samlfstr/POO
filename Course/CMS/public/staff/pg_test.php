@@ -10,7 +10,7 @@ while ($row = pg_fetch_row($result)) {
 
 ?>
 <?php foreach ($arr as $arr_s) : ?>s
-    <p style="margin-right: auto; margin-left: auto; text-align: center;"> <?php echo $arr_s[1]; ?></p>
+  <p style="margin-right: auto; margin-left: auto; text-align: center;"> <?php echo $arr_s[1]; ?></p>
 <?php endforeach; ?>
 
 

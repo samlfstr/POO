@@ -7,8 +7,8 @@ class ExerciceStaticFactory
 
     public static function create()
     {
-         $class_name = get_called_class();
-         return new $class_name;
+        $class_name = get_called_class();
+        return new $class_name;
     }
 }
 

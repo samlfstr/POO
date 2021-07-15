@@ -2,32 +2,34 @@
 // suppose that I know col names
 // insert into <t_n> (optional col names) values (need to know number of the cols);
 
-class Insert {
+class Insert
+{
     protected $table_name;
     private $ref_exp;
     private $ref_imp;
     private $query;
 
 
-
     /**
      * <strong> [-PROVIDE A TABLE NAME-] </strong>
      * @param $table_name
      */
-    public function __construct($table_name)/**dependency injection*/
+    public function __construct($table_name)
+        /**dependency injection*/
     {
         $this->table_name = $table_name;
-        $this->query = "insert into ".$table_name;
+        $this->query = "insert into " . $table_name;
     }
 
     /**
      * <strong> [-SPACE SEPARATED COL NAMES-] </strong>
      * @param $col_names
      */
-    public function col_names ($col_names){
+    public function col_names($col_names)
+    {
         $this->ref_exp = explode(' ', $col_names);
         $this->ref_imp = implode(',', $this->ref_exp);
-        $this->query .= " (".$this->ref_imp.")";
+        $this->query .= " (" . $this->ref_imp . ")";
         $this->ref_exp;
     }
 
@@ -35,10 +37,11 @@ class Insert {
      * <strong> [-SPACE SEPARATED VALUES-] </strong>
      * @param $vals
      */
-    public function values($vals){
+    public function values($vals)
+    {
         $this->ref_exp = explode(' ', $vals);
         $this->ref_imp = implode(',', $this->ref_exp);
-        $this->query .=" values (". $this->ref_imp . ")";
+        $this->query .= " values (" . $this->ref_imp . ")";
     }
 
     /**

@@ -3,12 +3,14 @@
 
 class TwelweChef
 {
-    public static function make_dinner(){
+    public static function make_dinner()
+    {
         echo "Cook food";
     }
 }
 
-class HalfChef extends TwelweChef{
+class HalfChef extends TwelweChef
+{
 
     public static function make_dinner()
     {

@@ -56,8 +56,9 @@ class CdProduct extends ShopProductC2
                                 $play_time)
     {
         parent::__construct($title, $producer_f_name, $producer_m_name, $price);
-        $this->play_time =$play_time;
+        $this->play_time = $play_time;
     }
+
     /**
      * @return mixed
      */
@@ -85,6 +86,7 @@ class BookProduct extends ShopProductC2
         parent::__construct($title, $producer_f_name, $producer_m_name, $price);
         $this->num_pages = $num_pages;
     }
+
     /**
      * @return mixed
      */
@@ -101,5 +103,5 @@ class BookProduct extends ShopProductC2
     }
 }
 
-$product1 = new BookProduct('Personnal developpement', 'Samuel','Foster',35,129);
+$product1 = new BookProduct('Personnal developpement', 'Samuel', 'Foster', 35, 129);
 echo $product1->getSummaryLine();

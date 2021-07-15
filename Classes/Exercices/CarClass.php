@@ -3,12 +3,12 @@
 
 class Wehicle
 {
+    public const MILE = 1.609;
+    protected const BR = "<br/>";
+    public static $wheels = "Unknown";
     protected $mark;
     protected $model;
     protected $year;
-    public static $wheels = "Unknown";
-    public const MILE = 1.609;
-    protected const BR = "<br/>";
 
     /**
      * Wehicle constructor.
@@ -34,13 +34,15 @@ class Wehicle
     }
 
     // If I'd used self instead of static the output would Unknown
-    public function carProperties(){
-        return "Mark : ". $this->mark.self::BR."Model : ".$this->model.self::BR."Year : ".$this->year.self::BR."Wheels : ".static::$wheels.self::BR;
+    public function carProperties()
+    {
+        return "Mark : " . $this->mark . self::BR . "Model : " . $this->model . self::BR . "Year : " . $this->year . self::BR . "Wheels : " . static::$wheels . self::BR;
     }
 
 }
 
-class CarClass extends Wehicle{
+class CarClass extends Wehicle
+{
     public static $wheels = 4;
     protected $reserve;
 
@@ -56,17 +58,18 @@ class CarClass extends Wehicle{
         parent::__construct($mark, $model, $year);
         $this->reserve = $reserve;
     }
+
     public function carProperties()
     {
         $output = parent::carProperties();
-        $output .= "Reserve : ".$this->reserve.self::BR;
+        $output .= "Reserve : " . $this->reserve . self::BR;
         return $output;
     }
 
 
 }
 
-$car = new CarClass(45,"mervedes","s",2020);
+$car = new CarClass(45, "mervedes", "s", 2020);
 echo $car->carProperties();
 
 $mile = Wehicle::kmToMile(100);

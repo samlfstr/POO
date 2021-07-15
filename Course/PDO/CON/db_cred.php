@@ -1,8 +1,7 @@
 <?php
 
-
 $host = "host=127.0.0.1";
-$port = "port=5432";
+$port = "port<=5432";
 $dbname = "dbname=europower";
 $user = "user=postgres";
 $password = "password=samlfstr";

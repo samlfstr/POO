@@ -13,7 +13,8 @@ class EleventhClock
     // unless php wont able to execute the code. In other words I need to say explicitly
     // that we are
     // using a class constant.
-    public function tomorrow(){
+    public function tomorrow()
+    {
         return time() + self::DAY_IN_SEC;
     }
 

@@ -23,19 +23,20 @@ class House
     /**
      * @return string
      */
-    public function Info() : string
+    public function Info(): string
     {
         $veritas = $this->wc ? "Yes" : "No";
-        $str = "Wc : "."{$veritas}"."</br>";
-        $str .= "MeterSquare : "."{$this->meterSquar}"."</br>";
+        $str = "Wc : " . "{$veritas}" . "</br>";
+        $str .= "MeterSquare : " . "{$this->meterSquar}" . "</br>";
         $veritas = $this->balcony ? "Yes" : "No";
-        $str .= "Balcony : "."{$veritas}"."</br>";
+        $str .= "Balcony : " . "{$veritas}" . "</br>";
         return $str;
     }
 
 }
 
-class Kitchen extends House{
+class Kitchen extends House
+{
     private $oven;
 
     /**
@@ -55,10 +56,10 @@ class Kitchen extends House{
     {
         $veritas = $this->oven ? "Yes" : "No";
         $str = parent::Info();
-        $str .= "Oven : "."{$veritas}"."</br>";
+        $str .= "Oven : " . "{$veritas}" . "</br>";
         return $str;
     }
 }
 
-$room = new Kitchen(true, 150,false,true);
+$room = new Kitchen(true, 150, false, true);
 echo $room->Info();

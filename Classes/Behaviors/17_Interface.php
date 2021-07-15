@@ -33,66 +33,85 @@
 
 
 // $actions = ['standart','fraud','3d secure'];
-interface StandardPaymentInterface{
-   public function pay();
+interface StandardPaymentInterface
+{
+    public function pay();
 }
-interface FraudCheckInterface{
-   public function fraudCheck();
+
+interface FraudCheckInterface
+{
+    public function fraudCheck();
 }
-interface TriDsecureCheckInterface{
-   public function triDsecureCheck();
+
+interface TriDsecureCheckInterface
+{
+    public function triDsecureCheck();
 }
-interface ProcessInterface{
-   public function process();
+
+interface ProcessInterface
+{
+    public function process();
 }
 
 // $objects = ['card','cash','promotion'];
-class PayWithCard implements StandardPaymentInterface , ProcessInterface , TriDsecureCheckInterface {
-   public function pay(){
-      echo "Pay with Card and ";
-   }
+class PayWithCard implements StandardPaymentInterface, ProcessInterface, TriDsecureCheckInterface
+{
+    public function process()
+    {
+        $this->pay();
+        $this->triDsecureCheck();
+    }
 
-   public function process()
-   {
-      $this->pay();
-      $this->triDsecureCheck();
-   }
+    public function pay()
+    {
+        echo "Pay with Card and ";
+    }
 
-   public function triDsecureCheck()
-   {
-      echo "Do TriD secure check";
-   }
+    public function triDsecureCheck()
+    {
+        echo "Do TriD secure check";
+    }
 }
-class PayWithCash implements StandardPaymentInterface , ProcessInterface{
-   public function pay(){
-      echo "Pay with Cash";
-   }
 
-   public function process()
-   {
-      $this->pay();
-   }
+class PayWithCash implements StandardPaymentInterface, ProcessInterface
+{
+    public function process()
+    {
+        $this->pay();
+    }
+
+    public function pay()
+    {
+        echo "Pay with Cash";
+    }
 }
-class PayWithPromotion implements StandardPaymentInterface, FraudCheckInterface,ProcessInterface {
-   public function pay(){
-      echo "Pay with Promotion Code and ";
-   }
-   public function fraudCheck(){
-      echo "Do fraud check";
-   }
 
-   public function process()
-   {
-      $this->pay();
-      $this->fraudCheck();
-   }
+class PayWithPromotion implements StandardPaymentInterface, FraudCheckInterface, ProcessInterface
+{
+    public function process()
+    {
+        $this->pay();
+        $this->fraudCheck();
+    }
+
+    public function pay()
+    {
+        echo "Pay with Promotion Code and ";
+    }
+
+    public function fraudCheck()
+    {
+        echo "Do fraud check";
+    }
 }
 
 // $control_point = 'PayementControl';
-class PayementControl{
-   public function takePayment(ProcessInterface $process){
-      $process->process();
-   }
+class PayementControl
+{
+    public function takePayment(ProcessInterface $process)
+    {
+        $process->process();
+    }
 }
 
 

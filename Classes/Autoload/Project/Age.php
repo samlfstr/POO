@@ -4,26 +4,26 @@
 class Age
 {
 
-   protected $age;
+    protected $age;
 
-   /**
-    * Age constructor.
-    * @param $age
-    */
-   public function __construct($age)
-   {
-      $this->age = $age;
-   }
+    /**
+     * Age constructor.
+     * @param $age
+     */
+    public function __construct($age)
+    {
+        $this->age = $age;
+    }
 
 
-   public static function create()
-      {
-         $class_name = get_called_class();
-         return new $class_name('');
-      }
+    public static function create()
+    {
+        $class_name = get_called_class();
+        return new $class_name('');
+    }
 
-      public function get_age()
-      {
-         return $this->age."<br>";
-      }
+    public function get_age()
+    {
+        return $this->age . "<br>";
+    }
 }

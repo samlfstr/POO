@@ -5,12 +5,12 @@
     4. Send
  */
 
-function click_me(){
+function click_me() {
     let xhr = new XMLHttpRequest();
     let container = document.getElementsByClassName('container')[0];
     let container_str = "<ul>";
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4 && xhr.status ===200){
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             let str_mod = xhr.responseText;
             str_mod = str_mod.replace(',]', ']');
             console.log(str_mod);
@@ -23,9 +23,9 @@ function click_me(){
             }
             container.innerHTML = container_str + "</ul>";
 
-        } else if (xhr.status === 404){
+        } else if (xhr.status === 404) {
             console.log('Document not found !');
-        } else if (xhr.status === 500){
+        } else if (xhr.status === 500) {
             console.log('Internal server error !');
         }
     }

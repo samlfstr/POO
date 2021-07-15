@@ -1,4 +1,4 @@
-<?php require_once ('../../../private/initialize.php');
+<?php require_once('../../../private/initialize.php');
 
 $id = $_GET['id'] ?? '1';
 
@@ -27,7 +27,7 @@ for ($i=0; $i < count($columns); $i++) {
  */
 ?>
 
-<?php 
+<?php
 /* <a href="show.php?name=.<?php echo urlencode('John Doe'); ?>">Handling Space</a>
 <br />
 <a href="show.php?name=.<?php echo urlencode('John&Doe'); ?>">Handling & Sign</a>
@@ -37,36 +37,36 @@ for ($i=0; $i < count($columns); $i++) {
 ?>
 
 <?php $page_title = 'Staff Menu'; ?>
-<?php include(SHARED_PATH.'\staff_header.php')?>
-<!--Content area-->
-<div id="content">
-     <div id="main-menu">
-          <h2> <?php echo $results[1]; ?> </h2>
+<?php include(SHARED_PATH . '\staff_header.php') ?>
+  <!--Content area-->
+  <div id="content">
+    <div id="main-menu">
+      <h2> <?php echo $results[1]; ?> </h2>
 
-  <button type="button" class="btn btn-light">
-    <a class="style-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">
-    &#8592; Back to List
-    </a>
-  </button>
-  
-          <div class="attributes">
-               <dl>
-                    <dt>Menu Name :&#x20;</dt>
-                    <dd><?php echo $results[1]; ?></dd>
-               </dl>
-               <dl>
-                    <dt>Position :&#x20;</dt>
-                    <dd><?php echo $results[2]; ?></dd>
-               </dl>
-               <dl>
-                    <dt>Visible :&#x20;</dt>
-                    <dd><?php echo $results[3]; ?></dd>
-               </dl>
-          </div>
+      <button type="button" class="btn btn-light">
+        <a class="style-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">
+          &#8592; Back to List
+        </a>
+      </button>
+
+      <div class="attributes">
+        <dl>
+          <dt>Menu Name :&#x20;</dt>
+          <dd><?php echo $results[1]; ?></dd>
+        </dl>
+        <dl>
+          <dt>Position :&#x20;</dt>
+          <dd><?php echo $results[2]; ?></dd>
+        </dl>
+        <dl>
+          <dt>Visible :&#x20;</dt>
+          <dd><?php echo $results[3]; ?></dd>
+        </dl>
+      </div>
 
 
-     </div>
+    </div>
 
-</div>
-<!-- END OF Content area-->
-<?php include(SHARED_PATH.'\staff_footer.php')?>
+  </div>
+  <!-- END OF Content area-->
+<?php include(SHARED_PATH . '\staff_footer.php') ?>
