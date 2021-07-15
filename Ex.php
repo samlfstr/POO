@@ -3,7 +3,7 @@
 // insert into <t_n> (optional col names) values (need to know number of the cols);
 
 class Insert {
-    private $table_name;
+    protected $table_name;
     private $ref_exp;
     private $ref_imp;
     private $query;

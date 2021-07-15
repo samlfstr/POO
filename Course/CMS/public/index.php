@@ -12,8 +12,6 @@ $sql_query .= "position='" . $cols['position'] . "', ";
 $sql_query .= "visible='" . $cols['visible'] . "' ";
 $sql_query .= "Where id='" . $cols['id'] . "'";
 
-echo $sql_query;
-die();
 
 ?>
 <!doctype html>
